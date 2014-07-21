@@ -1,4 +1,4 @@
-/*
+    /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
@@ -14,9 +14,20 @@ and open the template in the editor.
      height:500px;
     
 }
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size:18px;
+}
+h2 {
+    font-size:16px; 
+}
 
 a {
      text-decoration:none;  
+     color: #48577D;
     
 }
 
@@ -34,11 +45,7 @@ a {
                 
                 list-style:none;
                 margin:0 auto;
-                
-             
-                
-                
-            }
+                }
             .block {
                 width:100%;
                 height:100px;
@@ -57,7 +64,42 @@ a {
                   
                }
                
+               
+               
+               #cart{
+                   width:700px;
+                   margin:150px auto;
+                   background-color:#eee; 
+                   padding:15px;
+                   overflow:hidden;
+                   
+               }
+               
+               #main {
+                   
+                   width:490px;
+                   float:left;
+               }
+               
+               #sidebar {
+                   
+                   width:200px;
+                   float:left;
+               }
             
+               #main table {
+                   
+                   width:480px;
+               }
+               #main table th {
+                   padding:10px;
+                   background-color:#48577D;
+                   color:#fff;
+                   text-align:left;
+               }
+               #main table td {
+                   padding:5px;
+               }
                
                
           
