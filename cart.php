@@ -9,6 +9,7 @@ if (isset($_POST['submit'])){
         }
     }
 }
+print_r($_POST);
 ?>
 <h1>View cart</h1>
 <form method="post" action="index.php?page=cart">
@@ -29,12 +30,13 @@ if (isset($_POST['submit'])){
                         $totalprice=0;
                         $row = $results->fetchAll(PDO::FETCH_OBJ);
                         foreach ($row as $product) {
+                            print_r($product);
                             $subtotal= $_SESSION['cart'][$product->id]['quantity']*$product->price;
                             $totalprice+=$subtotal;
                             ?>
         <tr> 
             <td><?php echo $product->name ?></td>
-            <td><input type="text" name="quantity[<?php $product->id ?>]" size="5" value="<?php echo $_SESSION['cart'][$product->id]['quantity'] ?>"/></td>
+            <td><input type="text" name="quantity[<?php echo $product->id ?>]" size="5" value="<?php echo $_SESSION['cart'][$product->id]['quantity'] ?>"/></td>
             <td><?php echo $product->price ?></td>
              <td><?php echo $_SESSION['cart'][$product->id]['quantity']*$product->price ?>$</td>
         </tr>

@@ -37,7 +37,7 @@ if (isset($_GET['page'])) {
                     <h1>Cart</h1>
                     <?php if (isset($_SESSION['cart'])){
                         $query = "SELECT * FROM products WHERE id IN (";
-                        var_dump($_SESSION['cart']);
+                        
                           foreach ($_SESSION['cart'] as $id =>$val) {
                           $query .= $id . ",";
                         }
