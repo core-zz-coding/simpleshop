@@ -20,17 +20,17 @@ if (isset($_POST['submit'])){
             <th>Items Price</th>
         </tr>
      <?php 
- //     $query = "SELECT * FROM products WHERE id IN (";
-//                        foreach ($_SESSION['cart'] as $id =>$value) {
-//                            $query .= $id . ",";
-//                        }
-//                        $query=substr($query, 0, -1) . ")ORDER BY name ASC";
-//                        $results=$db->query($query);
-//                        $totalprice=0;
-//                        $row = $results->fetchAll(PDO::FETCH_OBJ);
-//                        foreach ($row as $product) {
-//                            $subtotal= $_SESSION['cart'][$product->id]['quantity']*$product->price;
-//                            $totalprice+=$subtotal;
+     $query = "SELECT * FROM products WHERE id IN (";
+     foreach ($_SESSION['cart'] as $id =>$value) {
+                            $query .= $id . ",";
+                        }
+                        $query=substr($query, 0, -1) . ")ORDER BY name ASC";
+                        $results=$db->query($query);
+                        $totalprice=0;
+                        $row = $results->fetchAll(PDO::FETCH_OBJ);
+                        foreach ($row as $product) {
+                            $subtotal= $_SESSION['cart'][$product->id]['quantity']*$product->price;
+                            $totalprice+=$subtotal;
                             ?>
         <tr> 
             <td><?php echo $product->name ?></td>
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])){
             <td><?php echo $product->price ?></td>
              <td><?php echo $_SESSION['cart'][$product->id]['quantity']*$product->price ?>$</td>
         </tr>
-                       <?php// } ?>
+                       <?php } ?>
         <tr>
             <td>Total price: <?php echo $totalprice; ?>$</td>
         </tr>
